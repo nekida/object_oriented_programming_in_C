@@ -23,9 +23,9 @@
 
 `struct antenna_vtbl {`
 
-	  uint32_t (*number_of_emitters)(antenna const * const me); //получить количество излучателей
+	  	uint32_t (*number_of_emitters)(antenna const * const me); //получить количество излучателей
   
-	  void (*change_range)(antenna const * const me); //изменить диапазон работы
+	  	void (*change_range)(antenna const * const me); //изменить диапазон работы
   
 `};`
 
@@ -35,7 +35,7 @@
 
 `{`
 
-    return (*me->vptr->area)(me);  
+		return (*me->vptr->area)(me);  
     
 `}`
  
@@ -43,7 +43,7 @@
 
 `{`
 
-    (*me->vptr->draw)(me);
+		(*me->vptr->draw)(me);
     
 `}`
 
