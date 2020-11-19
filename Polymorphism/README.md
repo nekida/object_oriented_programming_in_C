@@ -5,27 +5,31 @@
 
 `struct antenna_vtbl {`
 
-	  	uint32_t (*number_of_emitters)(antenna const * const me); //получить количество излучателей
+	uint32_t (*number_of_emitters)(antenna const * const me); //получить количество излучателей
   
-	  	void (*change_range)(antenna const * const me); //изменить диапазон работы
+	void (*change_range)(antenna const * const me); //изменить диапазон работы
   
 `};`
 
 Реализация виртуальных функций:
 
+Получить количество излучателей
+
 `static inline uint32_t antenna_get_number_of_emitters (antenna const * const me)`
 
 `{`
 
-		return (*me->vptr->area)(me);  
+	return (*me->vptr->number_of_emitters)(me);  
     
 `}`
+
+Изменить диапазон работы
  
 `static inline void antenna_change_range (antenna const * const me)` 
 
 `{`
 
-		(*me->vptr->draw)(me);
+	(*me->vptr->change_range)(me);
     
 `}`
 
