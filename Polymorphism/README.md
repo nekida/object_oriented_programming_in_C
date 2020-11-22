@@ -36,7 +36,7 @@
 
 `static struct antenna_vtbl const vtbl = {`
 
-	`&antenna_get_square_`
+	&antenna_get_square_
 	
 `};`
 
@@ -46,9 +46,9 @@
 
 `{`
 
-   `assert(0);` 
+	assert(0); 
    
-    `return 0U;` 
+   	return 0U; 
     
 `}`
 
@@ -56,7 +56,7 @@
 
 `static struct antenna_vtbl const vtbl = {`
 
-	`&horn_radar_get_square_`
+	&horn_radar_get_square_
 	
 `};`
 
@@ -66,9 +66,9 @@
 
 `{`
 
-    `horn_radar const * const me_ = (horn_radar const *)me;`
+	horn_radar const * const me_ = (horn_radar const *)me;
     
-    `return (me_->width * me_->height);`
+    	return (me_->width * me_->height);
     
 `}`
 
@@ -78,7 +78,7 @@
 
 `static struct antenna_vtbl const vtbl = {`
 
-	`&parabolic_locator_get_square_`
+	&parabolic_locator_get_square_
 	
 `};`
 
@@ -88,8 +88,8 @@
 
 `{`
 
-    `parabolic_locator const * const me_ = (parabolic_locator const *)me;`
+  	parabolic_locator const * const me_ = (parabolic_locator const *)me;
     
-    `return (uint32_t)((double)me_->radius * 3.14 * 3.14);`
+    	return (uint32_t)((double)me_->radius * 3.14 * 3.14);
     
 `}`
