@@ -67,8 +67,7 @@
 `{`
 
 	horn_radar const * const me_ = (horn_radar const *)me;
-    
-    	return (me_->width * me_->height);
+ 	return (me_->width * me_->height);
     
 `}`
 
@@ -90,6 +89,6 @@
 
   	parabolic_locator const * const me_ = (parabolic_locator const *)me;
     
-    	return (uint32_t)((double)me_->radius * 3.14 * 3.14);
+	return (uint32_t)((double)me_->radius * 3.14 * 3.14);
     
 `}`
