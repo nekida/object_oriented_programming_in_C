@@ -34,42 +34,62 @@
 
 Вызов в конструкторе:
 
-`static struct antenna_vtbl const vtbl = { /
-	&antenna_get_square_
-};`
+`static struct antenna_vtbl const vtbl = {`
+
+	`&antenna_get_square_`
+	
+`};`
 
 Реализация заглушки в родительском классе:
 
-`static uint32_t antenna_get_square_ (antenna const * const me) 
-{
-    assert(0); 
-    return 0U; 
-}`
+`static uint32_t antenna_get_square_ (antenna const * const me)`
+
+`{`
+
+   `assert(0);` 
+   
+    `return 0U;` 
+    
+`}`
 
 Переназначение в конструкторе подкласса horn_radar:
 
-`static struct antenna_vtbl const vtbl = {
-	&horn_radar_get_square_
-};`
+`static struct antenna_vtbl const vtbl = {`
+
+	`&horn_radar_get_square_`
+	
+`};`
 
 Реализация уникальной для подкласса horn_radar функции расчета площади:
-`static uint32_t horn_radar_get_square_ (antenna const * const me) 
-{
-    horn_radar const * const me_ = (horn_radar const *)me; 
-    return (me_->width * me_->height);
-}`
+
+`static uint32_t horn_radar_get_square_ (antenna const * const me)`
+
+`{`
+
+    `horn_radar const * const me_ = (horn_radar const *)me;`
+    
+    `return (me_->width * me_->height);`
+    
+`}`
 
 В первой строчке функции происходит явное понижающее преобразование, позволяющее использовать функцию с родительским классом, но которую в самом классе не описывали.
 
 Переназначение в конструкторе подкласса parabolic_locator:
 
-`static struct antenna_vtbl const vtbl = {
-	&parabolic_locator_get_square_
-};`
+`static struct antenna_vtbl const vtbl = {`
+
+	`&parabolic_locator_get_square_`
+	
+`};`
 
 Реализация уникальной для подкласса parabolic_locator функции расчета площади:
-`static uint32_t parabolic_locator_get_square_ (antenna const * const me) 
-{
-    parabolic_locator const * const me_ = (parabolic_locator const *)me; 
-    return (uint32_t)((double)me_->radius * 3.14 * 3.14);
-}`
+
+`static uint32_t parabolic_locator_get_square_ (antenna const * const me)`
+
+`{`
+
+    `parabolic_locator const * const me_ = (parabolic_locator const *)me;`
+    
+    `return (uint32_t)((double)me_->radius * 3.14 * 3.14);`
+    
+`}`
